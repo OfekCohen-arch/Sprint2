@@ -10,7 +10,6 @@ header{
 }
 nav{
     font-size: 1.3rem;
-    display: flex;
     gap: 63px;
     margin-right: 247px;
 }
@@ -19,4 +18,7 @@ nav{
     gap: 70px;
     margin-top: 20px;
     display: flex;
+}
+.gallery-section{
+    margin-top: 15px;
 }

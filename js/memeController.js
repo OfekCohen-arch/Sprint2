@@ -9,12 +9,11 @@ function renderMeme(){
     const size = line.size
     const color = line.color
     const imgSrc = getImgById(meme.selectedImgId)
-    console.log(color,size,txt);
-    drawText(txt,size,color)
     const img = new Image()
     img.src = imgSrc
     img.onload = function() {
     drawImg(img)
+    drawText(txt,size,color)
     const lineText = document.querySelector('.line-text')
     lineText.value = txt
     }
