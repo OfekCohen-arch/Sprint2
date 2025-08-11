@@ -1,5 +1,8 @@
 'use strict'
-var gImgs = [{id: 1, url: 'img/meme-imgs (square)/1.jpg', keywords: ['donald', 'trump']}]
+var gImgs = [
+    {id: 1, url: 'img/meme-imgs (square)/1.jpg', keywords: ['donald', 'trump']},
+    {id: 2, url: 'img/meme-imgs (square)/2.jpg', keywords:['dog']}
+]
 var gMeme = {
  selectedImgId: 1,
  selectedLineIdx: 0,
@@ -14,6 +17,9 @@ var gMeme = {
 
 function getMeme(){
     return gMeme
+}
+function getImages(){
+    return gImgs
 }
 function getImgById(id){
     const img = gImgs.find(img=>(id === img.id))
