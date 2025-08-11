@@ -6,6 +6,8 @@ function onInit(){
 gElCanvas = document.querySelector('canvas')
 gCtx = gElCanvas.getContext('2d')
 resizeCanvas()
+const editor = document.querySelector('.editor-section')
+editor.style.display = 'none'
 renderGallery()
 }
 

@@ -6,10 +6,15 @@ const images = getImages()
 var html = images.map((img)=>{
     img = `
     <div class = "card">
-    <img src='${img.url}'/>
+    <img src='${img.url}' onclick="onImgSelect(${img.id})"/>
     </div>
     `
     return img
 })
 gElGallery.innerHTML = html.join('')
+}
+function onImgSelect(id){
+    gElGallery.style.display = 'none'
+    setImg(id)
+    renderMeme()
 }
