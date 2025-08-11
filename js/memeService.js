@@ -5,9 +5,9 @@ var gMeme = {
  selectedLineIdx: 0,
  lines: [
  {
- txt: 'I sometimes eat Falafel',
+ txt: 'Goede morgen',
  size: 40,
- color: 'red'
+ color: 'blue'
  }
  ]
 }
@@ -18,4 +18,7 @@ function getMeme(){
 function getImgById(id){
     const img = gImgs.find(img=>(id === img.id))
     return img.url
+}
+function setLineTxt(txt){
+gMeme.lines[gMeme.selectedLineIdx].txt = txt
 }

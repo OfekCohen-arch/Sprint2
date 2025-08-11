@@ -12,6 +12,12 @@ function renderMeme(){
     img.onload = function() {
     drawImg(img)
     drawText(txt,size,color)
+    const lineText = document.querySelector('.line-text')
+    lineText.value = txt
     };
+}
+function onSetLineTxt(txt){
+setLineTxt(txt)
+renderMeme()
 }
 

@@ -13,5 +13,9 @@ nav{
     display: flex;
     gap: 63px;
     margin-right: 247px;
-    
+}
+.editor-section{
+    display: flex;
+    gap: 70px;
+    margin-top: 20px;
 }
