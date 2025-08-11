@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    background-color: #5970C1;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    border-radius: 999px;
+    font-family: poppins-medium;
+}
+nav{
+    font-size: 1.3rem;
+    display: flex;
+    gap: 63px;
+    margin-right: 247px;
+    
+}
