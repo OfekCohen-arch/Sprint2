@@ -23,20 +23,22 @@
         <label for="line-text">
             <input name="line-text" class="line-text" oninput="onSetLineTxt(this.value)"/>
         </label>
-        <div class="download-share-container">
+        <label class="color-btn" for="color-btn">
+            <input type="color" name="color-btn" class="color-btn" onchange="onSetColor(this.value)"/>
+        </label>
+            <div class="download-share-container">
             <button class="download-btn" onclick="downloadMeme()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-         <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17h16v4H4v-4z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-       </svg>
-       Download
-    </button>
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17h16v4H4v-4z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download
+            </button>
             <button class="share-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
-  <polyline points="16 6 12 2 8 6"/>
-  <line x1="12" y1="2" x2="12" y2="15"/>
-</svg>
-
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+            <polyline points="16 6 12 2 8 6"/>
+            <line x1="12" y1="2" x2="12" y2="15"/>
+            </svg>
                 Share
             </button>
         </div>

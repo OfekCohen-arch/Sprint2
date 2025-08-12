@@ -23,4 +23,15 @@ function onSetLineTxt(txt){
 setLineTxt(txt)
 renderMeme()
 }
+function onSetColor(color){
+    setColor(color)
+    renderMeme()
+}
+function downloadMeme(){
+           const dataURL = gElCanvas.toDataURL('image/jpeg');
+  const link = document.createElement('a');
+  link.href = dataURL;
+  link.download = 'meme.jpeg';
+  link.click()
+        }
 
