@@ -37,3 +37,10 @@ function drawImg(elImg){
 function toggleMenu() {
             document.body.classList.toggle('menu-open');
         }
+        function downloadMeme(){
+           const dataURL = gElCanvas.toDataURL('image/jpeg');
+  const link = document.createElement('a');
+  link.href = dataURL;
+  link.download = 'meme.jpeg';
+  link.click()
+        }

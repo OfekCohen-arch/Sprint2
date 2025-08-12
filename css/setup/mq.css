@@ -23,6 +23,10 @@
   .menu-btn{
     display: none;
   }
+  .download-btn,.share-btn{
+width: 170px;
+font-size: 1.3rem;
+  }
    }
 @media (max-width:740px) {
   .gallery-container{
@@ -68,6 +72,10 @@
         transform: translateX(0);
         box-shadow: -10px 0px 50px rgb(0 0 0 / 50%);
     }
+    .download-btn,.share-btn{
+    width: 120px;
+    font-size: 0.8rem;
+  }
 }
 
 

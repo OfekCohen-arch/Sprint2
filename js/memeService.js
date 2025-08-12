@@ -12,7 +12,7 @@ var gMeme = {
  selectedLineIdx: 0,
  lines: [
  {
- txt: 'Goede morgen',
+ txt: '',
  size: 40,
  color: 'blue'
  }
