@@ -11,7 +11,7 @@ header{
 nav{
     font-size: 1.3rem;
     gap: 63px;
-    margin-right: 247px;
+    display: flex;
 }
 .editor-section{
     display: flex;

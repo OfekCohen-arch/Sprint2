@@ -34,3 +34,6 @@ function drawText(text,size,color) {
 function drawImg(elImg){
      gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
+function toggleMenu() {
+            document.body.classList.toggle('menu-open');
+        }
