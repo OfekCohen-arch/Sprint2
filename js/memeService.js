@@ -38,3 +38,6 @@ gMeme.selectedImgId = id
 function setColor(color){
 gMeme.lines[gMeme.selectedLineIdx].color = color
 }
+function setSize(diff){
+gMeme.lines[gMeme.selectedLineIdx].size+=diff
+}

@@ -33,5 +33,10 @@ function downloadMeme(){
   link.href = dataURL;
   link.download = 'meme.jpeg';
   link.click()
-        }
+}
+function onSetSize(diff){
+setSize(diff)
+renderMeme()
+}
+
 

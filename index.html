@@ -24,8 +24,10 @@
             <input name="line-text" class="line-text" oninput="onSetLineTxt(this.value)"/>
         </label>
         <label class="color-btn" for="color-btn">
-            <input type="color" name="color-btn" class="color-btn" onchange="onSetColor(this.value)"/>
+            <input type="color" name="color-btn" onchange="onSetColor(this.value)"/>
         </label>
+        <button class="increase-size-btn" onclick="onSetSize(5)">+</button>
+        <button class="decrease-size-btn" onclick="onSetSize(-5)">-</button>
             <div class="download-share-container">
             <button class="download-btn" onclick="downloadMeme()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">

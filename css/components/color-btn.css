@@ -1,0 +1,6 @@
+.color-btn{
+    
+}
+.color-btn input::-webkit-color-swatch-wrapper {
+  display: none;
+}
