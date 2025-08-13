@@ -11,11 +11,7 @@ var gMeme = {
  selectedImgId: 1,
  selectedLineIdx: 0,
  lines: [
- {
- txt: 'Guten morgen',
- size: 40,
- color: 'black'
- }
+ 
  ]
 }
 
@@ -46,7 +42,11 @@ gMeme.lines.push(
     {
       txt: '',
       size: 40,
-      color: 'black'  
+      color: 'black',
+      startX:'',
+      startY:'',
+      height:'',
+      width:''  
     }
 )
 gMeme.selectedLineIdx = gMeme.lines.length-1
@@ -55,4 +55,12 @@ function switchLine(){
     gMeme.selectedLineIdx++
     if(gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
     return gMeme.lines[gMeme.selectedLineIdx].txt
+}
+function addLocation(startX,startY,idx){
+gMeme.lines[idx].startX = startX
+gMeme.lines[idx].startY = startY
+}
+function addHeightandWidth(height,width,idx){
+gMeme.lines[idx].height = height
+gMeme.lines[idx].width = width
 }

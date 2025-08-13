@@ -29,15 +29,17 @@ function drawText(text,size,color,y,i) {
     gCtx.textBaseline = 'middle'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
-    if(i === getMeme().selectedLineIdx){
-      const metrics = gCtx.measureText(text);
+    const metrics = gCtx.measureText(text);
       const textWidth = metrics.width;
       const textHeight = size;
       const startX = x - textWidth/2
       const startY = y - metrics.actualBoundingBoxAscent
+      addLocation(startX,startY,i)
+      addHeightandWidth(height,width,i)
+    if(i === getMeme().selectedLineIdx){
       gCtx.strokeStyle = 'black';
       gCtx.lineWidth = 2;
-      gCtx.strokeRect(startX,startY, textWidth, textHeight);
+      gCtx.strokeRect(startX-5,startY-5, textWidth+10, textHeight+10);
     }
 }
 function drawImg(elImg){
