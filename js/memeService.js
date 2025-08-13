@@ -15,6 +15,11 @@ var gMeme = {
  txt: 'Guten morgen',
  size: 40,
  color: 'black'
+ },
+  {
+ txt: 'Goede morgen',
+ size: 40,
+ color: 'black'
  }
  ]
 }
@@ -50,4 +55,9 @@ gMeme.lines.push(
     }
 )
 gMeme.selectedLineIdx = gMeme.lines.length-1
+}
+function switchLine(){
+    gMeme.selectedLineIdx++
+    if(gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0
+    return gMeme.lines[gMeme.selectedLineIdx].txt
 }

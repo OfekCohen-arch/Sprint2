@@ -48,4 +48,8 @@ addLine()
 const lineText = document.querySelector('.line-text')
 lineText.value = ''
 }
+function onSwitchLine(){
+    const lineText = document.querySelector('.line-text')
+    lineText.value = switchLine() 
+}
 
