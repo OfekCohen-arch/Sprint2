@@ -18,9 +18,8 @@ function resizeCanvas(){
     gCtx.fillStyle = "white";
 gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);  
 }
-function drawText(text,size,color) {
+function drawText(text,size,color,y) {
     const x = gElCanvas.width/2
-    const y = 30
     gCtx.beginPath()
     gCtx.lineWidth = 2
     gCtx.strokeStyle = 'black'

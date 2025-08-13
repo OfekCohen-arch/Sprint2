@@ -4,18 +4,23 @@ function renderMeme(){
     const editor = document.querySelector('.editor-section')
     editor.style.display = 'flex'
     const meme = getMeme()
-    const line = meme.lines[meme.selectedLineIdx]
-    const txt = line.txt
-    const size = line.size
-    const color = line.color
-    const imgSrc = getImgById(meme.selectedImgId)
+     const imgSrc = getImgById(meme.selectedImgId)
     const img = new Image()
     img.src = imgSrc
     img.onload = function() {
     drawImg(img)
-    drawText(txt,size,color)
+    const lines = meme.lines
+    for(let i = 0;i<lines.length;i++){
+    var y = 30+i*50
+    const line = meme.lines[i]
+    const txt = line.txt
+    const size = line.size
+    const color = line.color
+    drawText(txt,size,color,y)
     const lineText = document.querySelector('.line-text')
     lineText.value = txt
+    }
+    
     }
 }
 
