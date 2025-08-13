@@ -18,7 +18,7 @@ function resizeCanvas(){
     gCtx.fillStyle = "white";
 gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);  
 }
-function drawText(text,size,color,y) {
+function drawText(text,size,color,y,i) {
     const x = gElCanvas.width/2
     gCtx.beginPath()
     gCtx.lineWidth = 2
@@ -29,6 +29,16 @@ function drawText(text,size,color,y) {
     gCtx.textBaseline = 'middle'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
+    if(i === getMeme().selectedLineIdx){
+      const metrics = gCtx.measureText(text);
+      const textWidth = metrics.width;
+      const textHeight = size;
+      const startX = x - textWidth/2
+      const startY = y - metrics.actualBoundingBoxAscent
+      gCtx.strokeStyle = 'black';
+      gCtx.lineWidth = 2;
+      gCtx.strokeRect(startX,startY, textWidth, textHeight);
+    }
 }
 function drawImg(elImg){
      gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)

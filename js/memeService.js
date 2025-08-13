@@ -15,11 +15,6 @@ var gMeme = {
  txt: 'Guten morgen',
  size: 40,
  color: 'black'
- },
-  {
- txt: 'Goede morgen',
- size: 40,
- color: 'black'
  }
  ]
 }
