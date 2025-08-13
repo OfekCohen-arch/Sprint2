@@ -15,11 +15,6 @@ var gMeme = {
  txt: 'Guten morgen',
  size: 40,
  color: 'black'
- },
- {
-    txt:'Goede morgen',
-    size: 40,
-    color: 'black'
  }
  ]
 }
@@ -45,4 +40,14 @@ gMeme.lines[gMeme.selectedLineIdx].color = color
 }
 function setSize(diff){
 gMeme.lines[gMeme.selectedLineIdx].size+=diff
+}
+function addLine(){
+gMeme.lines.push(
+    {
+      txt: '',
+      size: 40,
+      color: 'black'  
+    }
+)
+gMeme.selectedLineIdx = gMeme.lines.length-1
 }

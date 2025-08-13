@@ -18,7 +18,7 @@ function renderMeme(){
     const color = line.color
     drawText(txt,size,color,y)
     const lineText = document.querySelector('.line-text')
-    lineText.value = txt
+    if(meme.selectedLineIdx === i)lineText.value = txt
     }
     
     }
@@ -43,5 +43,9 @@ function onSetSize(diff){
 setSize(diff)
 renderMeme()
 }
-
+function onAddLine(){
+addLine()    
+const lineText = document.querySelector('.line-text')
+lineText.value = ''
+}
 
