@@ -20,7 +20,6 @@ function renderMeme(){
     const lineText = document.querySelector('.line-text')
     if(meme.selectedLineIdx === i)lineText.value = txt
     }
-    
     }
 }
 
@@ -33,7 +32,7 @@ function onSetColor(color){
     renderMeme()
 }
 function downloadMeme(){
-           const dataURL = gElCanvas.toDataURL('image/jpeg');
+  const dataURL = gElCanvas.toDataURL('image/jpeg');
   const link = document.createElement('a');
   link.href = dataURL;
   link.download = 'meme.jpeg';
@@ -47,10 +46,17 @@ function onAddLine(){
 addLine()    
 const lineText = document.querySelector('.line-text')
 lineText.value = ''
+renderMeme()
 }
 function onSwitchLine(){
     const lineText = document.querySelector('.line-text')
     lineText.value = switchLine() 
     renderMeme()
+}
+function onSelectLine(ev){
+const x = ev.offsetX
+const y = ev.offsetY
+selectLine(x,y)
+renderMeme()
 }
 

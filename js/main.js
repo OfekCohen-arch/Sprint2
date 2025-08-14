@@ -22,7 +22,7 @@ function drawText(text,size,color,y,i) {
     const x = gElCanvas.width/2
     gCtx.beginPath()
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'black'
+    gCtx.strokeStyle = color
     gCtx.fillStyle = color
     gCtx.font = size+'px Arial'
     gCtx.textAlign = 'center'
@@ -35,7 +35,7 @@ function drawText(text,size,color,y,i) {
       const startX = x - textWidth/2
       const startY = y - metrics.actualBoundingBoxAscent
       addLocation(startX,startY,i)
-      addHeightandWidth(height,width,i)
+      addHeightandWidth(textHeight,textWidth,i)
     if(i === getMeme().selectedLineIdx){
       gCtx.strokeStyle = 'black';
       gCtx.lineWidth = 2;
