@@ -8,3 +8,7 @@ img{
     object-fit: cover;
     border-radius: 10px;
 }
+select{
+    font-family: poppins-medium;
+    grid-column: 1/4;
+}

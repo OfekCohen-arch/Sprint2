@@ -2,8 +2,10 @@
     border-radius: 20px;
     font-family: poppins-medium;
     color: white;
-    border: #000000 solid 2px;
+    border: none;
     background-color: #1E7CD3;
-    
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
 }

@@ -1,6 +1,9 @@
 .color-btn{
-    
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.color-btn input::-webkit-color-swatch-wrapper {
-  display: none;
-}
+

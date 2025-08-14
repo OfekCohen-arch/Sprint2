@@ -1,0 +1,14 @@
+.edit-line-container{
+    background-color: #19A59F;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+}
+.edit-line-container button{
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

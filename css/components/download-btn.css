@@ -2,6 +2,10 @@
     border-radius: 20px;
     font-family: poppins-medium;
     color: white;
-    border: #000000 solid 2px;
+    border: none;
     background-color: #8F44BB;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
 }

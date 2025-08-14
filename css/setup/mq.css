@@ -41,8 +41,44 @@ font-size: 1.35625rem;
     display: none;
   }
   .download-btn,.share-btn{
-width: 170px;
+width: 215px;
+height: 53px;
 font-size: 1.3rem;
+  }
+  .add-switch-delete-buttons-container{
+    gap: 19px;
+  }
+  .add-switch-delete-buttons-container button{
+    height: 55px;
+    width: 60px;
+    font-size: 3.2rem;
+  }
+  .edit-line-container{
+    width: 447px;
+    height: 153px;
+    padding: 10px;
+    grid-template-columns: repeat(5,minmax(60px,1fr));
+    gap: 20px;
+  }
+  .edit-line-container button{
+    height: 60px;
+    width: 60px;
+    font-size: 2rem;
+    font-family: poppins-medium;
+  }
+  select{
+    width: 240px;
+    height: 60px;
+    font-size: 1.7rem;
+    border-radius: 15px;
+    border: none;
+  }
+  .color-btn{
+    width: 60px;
+    height: 60px;
+    font-size: 1.7rem;
+    border-radius: 15px;
+    border: none;
   }
    }
 @media (max-width:740px) {
