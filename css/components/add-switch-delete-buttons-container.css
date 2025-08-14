@@ -1,0 +1,21 @@
+.add-switch-delete-buttons-container{
+    display:  flex;
+    justify-self: center
+}
+.add-switch-delete-buttons-container button{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    border: none;
+}
+.add-line-btn{
+    background-color: lightgreen;
+}
+.switch-line-btn{
+    background-color: cyan;
+}
+.delete-line-btn{
+    background-color: red;
+}

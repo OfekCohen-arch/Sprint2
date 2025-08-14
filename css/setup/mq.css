@@ -1,10 +1,25 @@
 @media (min-width:740px) {
     .gallery-container{
     grid-template-columns: repeat(5,minmax(100px,1fr));
+    background-color: #383B42;
+    padding: 40px;
+    gap: 25px;
+    border-radius: 20px;
   }  
+  header{
+    height: 76px;
+    border-radius: 999px;
+  }
+  h1{
+font-size: 1.35625rem;    
+}
   nav{
     flex-direction: row;
     margin-right: 247px;
+  }
+  nav button{
+    width: 119px;
+    height: 43px;
   }
   h1{
     margin-left: 125px;
@@ -31,7 +46,15 @@ font-size: 1.3rem;
 @media (max-width:740px) {
   .gallery-container{
     grid-template-columns: repeat(2,minmax(200px,1fr));
+    gap: 10px;
   }  
+  header{
+    height: 147px;
+    
+  }
+  h1{
+font-size: 2.73125rem;    
+}
   nav{
     position: fixed;
         right: 0;
@@ -44,11 +67,11 @@ font-size: 1.3rem;
         transition: transform .6s, box-shadow .6s;
         flex-direction: column;
   }
-  nav a{
+  nav button{
     text-align: center;
   }
-  nav a:nth-child(1){
-    margin-top: 100px;
+  nav button:nth-child(1){
+    margin-top: 150px;
   }
   h1{
     margin-left: 60px;
