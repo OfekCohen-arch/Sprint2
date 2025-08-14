@@ -21,6 +21,16 @@ gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);
 function drawText(text,size,color,y,i) {
     const x = gElCanvas.width/2
     gCtx.beginPath()
+     const metrics = gCtx.measureText(text);
+      const textWidth = metrics.width;
+      const textHeight = size;
+      const startX = x - textWidth/2
+      const startY = y - metrics.actualBoundingBoxAscent
+      addLocation(startX,startY,i)
+      addHeightandWidth(textHeight,textWidth,i)
+    if(i === getMeme().selectedLineIdx){
+      drawFrame(startX,startY,textWidth,textHeight)
+    }
     gCtx.lineWidth = 2
     gCtx.strokeStyle = color
     gCtx.fillStyle = color
@@ -29,18 +39,7 @@ function drawText(text,size,color,y,i) {
     gCtx.textBaseline = 'middle'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
-    const metrics = gCtx.measureText(text);
-      const textWidth = metrics.width;
-      const textHeight = size;
-      const startX = x - textWidth/2
-      const startY = y - metrics.actualBoundingBoxAscent
-      addLocation(startX,startY,i)
-      addHeightandWidth(textHeight,textWidth,i)
-    if(i === getMeme().selectedLineIdx){
-      gCtx.strokeStyle = 'black';
-      gCtx.lineWidth = 2;
-      gCtx.strokeRect(startX-5,startY-5, textWidth+10, textHeight+10);
-    }
+     
 }
 function drawImg(elImg){
      gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
@@ -48,4 +47,17 @@ function drawImg(elImg){
 function toggleMenu() {
             document.body.classList.toggle('menu-open');
         }
-        
+function drawFrame(startX,startY,textWidth,textHeight){
+  gCtx.beginPath()
+      gCtx.strokeStyle = 'black';
+      gCtx.lineWidth = 2;
+      gCtx.roundRect(startX-10,startY-10, textWidth+20, textHeight+20,50);
+      gCtx.fillStyle = 'rgba(255,255,255,0.5)'
+      gCtx.fill()
+}
+function goToGallery(){
+const editor = document.querySelector('.editor-section')
+editor.style.display = 'none'
+const gallery = document.querySelector('.gallery-container')
+gallery.style.display = 'grid'
+}        

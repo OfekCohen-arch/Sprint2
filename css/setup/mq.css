@@ -25,15 +25,17 @@ font-size: 1.35625rem;
     margin-left: 125px;
   }
   .editor-container{
-    width: 500px;
-    height: 500px;
+    width: 528px;
+    height: 549px;
   }
   .canvas-container{
-    width: 500px;
+    width: 546px;
+    height: 546px;
   }
   .line-text{
-    width: 360px;
-       font-size: 1.56rem;
+    width: 447px;
+    height: 59px;
+    font-size: 1.56rem;
   }
   .menu-btn{
     display: none;
