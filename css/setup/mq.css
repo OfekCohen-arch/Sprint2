@@ -80,7 +80,11 @@ font-size: 1.3rem;
     border-radius: 15px;
     border: none;
   }
+  .download-share-container{
+    gap: 20px;
+  }
    }
+   /* mobile */
 @media (max-width:740px) {
   .gallery-container{
     grid-template-columns: repeat(2,minmax(200px,1fr));
@@ -117,6 +121,36 @@ font-size: 2.73125rem;
   .editor-container{
     width: 300px;
     height: 300px;
+    gap: 10px;
+  }
+  .add-switch-delete-buttons-container{
+    gap: 10px;
+  }
+  .add-switch-delete-buttons-container button{
+    width: 40px;
+    height: 40px;
+    font-size: 1.6rem;
+  }
+  .edit-line-container{
+    width: 240px;
+    grid-template-columns: repeat(5,minmax(30px,1fr));
+    gap: 5px;
+    padding: 5px;
+    margin-inline: 30px;
+  }
+  .edit-line-container button{
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  .download-share-container{
+    gap: 20px;
+    margin-inline: auto;
+  }
+  .download-btn,.share-btn{
+width: 115px;
+height: 53px;
+font-size: 1.3rem;
   }
   .canvas-container{
     width: 300px;
@@ -125,6 +159,7 @@ font-size: 2.73125rem;
   .line-text{
     width: 200px;
     font-size: 1.25rem;
+    margin-inline: 50px;
   }
   .menu-btn{
     display: block;

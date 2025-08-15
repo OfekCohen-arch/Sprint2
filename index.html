@@ -24,7 +24,13 @@
             <input name="line-text" class="line-text" oninput="onSetLineTxt(this.value)"/>
         </label>
         <div class="add-switch-delete-buttons-container">
-        <button class="switch-line-btn" onclick="onSwitchLine()">S</button>
+        <button class="switch-line-btn" onclick="onSwitchLine()">
+            <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 38 V18 L14 24 L12 22 L22 12 L32 22 L30 24 L24 18 V38 Z" fill="#ccc" />
+  <path d="M40 22 V42 L34 36 L32 38 L42 48 L52 38 L50 36 L44 42 V22 Z" fill="#ccc" />
+</svg>
+
+        </button>
         <button class="add-line-btn" onclick="onAddLine()">+</button>
         <button class="delete-line-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">

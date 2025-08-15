@@ -1,6 +1,5 @@
 .download-share-container{
     display: flex;
-    gap: 20px;
     justify-content: space-between;
     height: 50px;
     align-self: self-end;
