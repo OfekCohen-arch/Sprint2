@@ -1,6 +1,7 @@
 'use strict'
 var gElCanvas
 var gCtx
+var gIsMemeDownloaded = false
 
 function onInit(){
 gElCanvas = document.querySelector('canvas')
@@ -28,7 +29,7 @@ function drawText(text,size,color,y,i) {
       const startY = y - metrics.actualBoundingBoxAscent
       addLocation(startX,startY,i)
       addHeightandWidth(textHeight,textWidth,i)
-    if(i === getMeme().selectedLineIdx){
+    if(i === getMeme().selectedLineIdx && !gIsMemeDownloaded){
       drawFrame(startX,startY,textWidth,textHeight)
     }
     gCtx.lineWidth = 2

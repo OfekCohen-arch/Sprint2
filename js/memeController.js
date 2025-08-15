@@ -1,5 +1,4 @@
 'use strict'
-
 function renderMeme(){
     const editor = document.querySelector('.editor-section')
     editor.style.display = 'flex'
@@ -32,11 +31,17 @@ function onSetColor(color){
     renderMeme()
 }
 function downloadMeme(){
+  gIsMemeDownloaded = true
+  renderMeme()
+  setTimeout(()=>{
+  gIsMemeDownloaded = false
   const dataURL = gElCanvas.toDataURL('image/jpeg');
   const link = document.createElement('a');
   link.href = dataURL;
   link.download = 'meme.jpeg';
   link.click()
+  },1500)
+  
 }
 function onSetSize(diff){
 setSize(diff)

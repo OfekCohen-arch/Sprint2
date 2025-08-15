@@ -16,5 +16,8 @@ gElGallery.innerHTML = html.join('')
 function onImgSelect(id){
     gElGallery.style.display = 'none'
     setImg(id)
+    const lineText = document.querySelector('.line-text')
+    lineText.value = '' 
+    deleteAllLines()
     renderMeme()
 }

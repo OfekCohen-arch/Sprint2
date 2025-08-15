@@ -98,3 +98,12 @@ if(x<=endX && x>=startX && y<=endY && y>=startY){
 }
 }
 }
+function deleteAllLines(){
+    gMeme = {
+ selectedImgId: 1,
+ selectedLineIdx: 0,
+ lines: [
+ 
+ ]
+}
+}
