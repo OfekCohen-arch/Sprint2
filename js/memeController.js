@@ -15,7 +15,8 @@ function renderMeme(){
     const txt = line.txt
     const size = line.size
     const color = line.color
-    drawText(txt,size,color,y,i)
+    const font = line.font
+    drawText(txt,size,color,font,y,i)
     const lineText = document.querySelector('.line-text')
     if(meme.selectedLineIdx === i)lineText.value = txt
     }
@@ -62,6 +63,10 @@ function onSelectLine(ev){
 const x = ev.offsetX
 const y = ev.offsetY
 selectLine(x,y)
+renderMeme()
+}
+function onSetFont(font){
+setFont(font)
 renderMeme()
 }
 

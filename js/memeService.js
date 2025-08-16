@@ -28,6 +28,7 @@ var gMeme = {
 }
 var gSelectedColor  = 'black'
 var gSelectedSize = 40
+var gSelectedFont = 'arial'
 
 function getMeme(){
     return gMeme
@@ -62,6 +63,7 @@ gMeme.lines.push(
       txt: '',
       size: gSelectedSize,
       color: gSelectedColor,
+      font: gSelectedFont,
       startX:'',
       startY:'',
       height:'',
@@ -106,4 +108,9 @@ function deleteAllLines(){
  
  ]
 }
+}
+function setFont(font){
+gSelectedFont = font
+ if(gMeme.lines.length === 0)  return
+gMeme.lines[gMeme.selectedLineIdx].font = font
 }

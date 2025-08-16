@@ -19,7 +19,7 @@ function resizeCanvas(){
     gCtx.fillStyle = "white";
 gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);  
 }
-function drawText(text,size,color,y,i) {
+function drawText(text,size,color,font,y,i) {
     const x = gElCanvas.width/2
     gCtx.beginPath()
      const metrics = gCtx.measureText(text);
@@ -35,7 +35,7 @@ function drawText(text,size,color,y,i) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = color
     gCtx.fillStyle = color
-    gCtx.font = size+'px Arial'
+    gCtx.font = size+'px '+font
     gCtx.textAlign = 'center'
     gCtx.textBaseline = 'middle'
     gCtx.fillText(text, x, y)
