@@ -121,3 +121,7 @@ gSelectedTextAlign = textAlign
 if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].textAlign = textAlign
 }
+function setLocation(diff){
+if(gMeme.lines.length === 0)  return
+gMeme.lines[gMeme.selectedLineIdx].startY+=diff
+}

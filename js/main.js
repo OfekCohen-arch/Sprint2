@@ -19,7 +19,7 @@ function resizeCanvas(){
     gCtx.fillStyle = "white";
 gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);  
 }
-function drawText(text,size,color,font,textAlign,y,i) {
+function drawText(text,size,color,font,textAlign,i) {
     var x
      if(textAlign === 'center') x = gElCanvas.width/2
      else if(textAlign === 'left') x = 5
@@ -32,7 +32,13 @@ function drawText(text,size,color,font,textAlign,y,i) {
       if(textAlign === 'center') startX = x - textWidth/2
       else if(textAlign === 'left') startX = x
       else startX = x - textWidth
-      const startY = y - metrics.actualBoundingBoxAscent
+      var startY 
+      if(!getMeme().lines[i].startY){
+        if(i === 0) startY = 10
+        else if(i === 1) startY = gElCanvas.height - textHeight-5
+        else startY = gElCanvas.height/2-textHeight
+      }
+      else startY = getMeme().lines[i].startY
       addLocation(startX,startY,i)
       addHeightandWidth(textHeight,textWidth,i)
     if(i === getMeme().selectedLineIdx && !gIsMemeDownloaded){
@@ -44,6 +50,7 @@ function drawText(text,size,color,font,textAlign,y,i) {
     gCtx.font = size+'px '+font
     gCtx.textAlign = textAlign
     gCtx.textBaseline = 'middle'
+    var y = startY + textHeight/2
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
      

@@ -55,7 +55,6 @@ font-size: 1.3rem;
   }
   .edit-line-container{
     width: 447px;
-    height: 153px;
     padding: 10px;
     grid-template-columns: repeat(5,minmax(60px,1fr));
     gap: 20px;

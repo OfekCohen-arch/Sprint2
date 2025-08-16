@@ -3,6 +3,7 @@
     border-radius: 10px;
     display: grid;
     justify-content: center;
+    align-items: center;
 }
 .edit-line-container button{
     background-color: white;

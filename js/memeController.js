@@ -10,14 +10,13 @@ function renderMeme(){
     drawImg(img)
     const lines = meme.lines
     for(let i = 0;i<lines.length;i++){
-    var y = 30+i*50
     const line = meme.lines[i]
     const txt = line.txt
     const size = line.size
     const color = line.color
     const font = line.font
     const textAlign = line.textAlign
-    drawText(txt,size,color,font,textAlign,y,i)
+    drawText(txt,size,color,font,textAlign,i)
     const lineText = document.querySelector('.line-text')
     if(meme.selectedLineIdx === i)lineText.value = txt
     }
@@ -72,6 +71,10 @@ renderMeme()
 }
 function onSetTextAlign(textAlign){
 setTextAlign(textAlign)
+renderMeme()
+}
+function onSetLocation(diff){
+setLocation(diff)
 renderMeme()
 }
 
