@@ -1,9 +1,6 @@
-.color-btn{
-    background-color: white;
-    border-radius: 20px;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.color-input{
+opacity: 0;      
+position: absolute; 
+width: 0;
+height: 0;    
 }
-

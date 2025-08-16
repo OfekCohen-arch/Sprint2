@@ -26,10 +26,11 @@ var gMeme = {
  
  ]
 }
-var gSelectedColor  = 'black'
+var gSelectedColor  = '#000000'
 var gSelectedSize = 40
 var gSelectedFont = 'Arial'
 var gSelectedTextAlign = 'center'
+var gSelectedStroke = '#000000'
 
 function getMeme(){
     return gMeme
@@ -52,6 +53,11 @@ function setColor(color){
 gSelectedColor = color
  if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].color = gSelectedColor
+}
+function setStroke(stroke){
+gSelectedStroke = stroke
+ if(gMeme.lines.length === 0)  return
+gMeme.lines[gMeme.selectedLineIdx].stroke = gSelectedStroke    
 }
 function setSize(diff){
 gSelectedSize += diff
@@ -88,10 +94,11 @@ function deleteAllLines(){
  
  ]
 }
-gSelectedColor = 'black'
+gSelectedColor = '#000000'
 gSelectedSize = 40
 gSelectedFont = 'Arial'
 gSelectedTextAlign = 'center'
+gSelectedStroke  = '#000000'
 }
 function setFont(font){
 gSelectedFont = font
@@ -113,6 +120,7 @@ gMeme.lines.push(
       txt: '',
       size: gSelectedSize,
       color: gSelectedColor,
+      stroke: gSelectedStroke,
       font: gSelectedFont,
       textAlign: gSelectedTextAlign,
       startX:'',
@@ -129,6 +137,7 @@ function switchLine(){
     if(gMeme.selectedLineIdx >= gMeme.lines.length) gMeme.selectedLineIdx = 0
     gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
     gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size
+    gSelectedStroke = gMeme.lines[gMeme.selectedLineIdx].stroke
     return gMeme.lines[gMeme.selectedLineIdx].txt
 }
 function deleteLine(){
@@ -141,16 +150,19 @@ gSelectedColor = 'black'
 gSelectedSize = 40
 gSelectedFont = 'arial'
 gSelectedTextAlign = 'center'  
+gSelectedStroke  = 'black'
 resetInputs()
 }
 else{
 gMeme.selectedLineIdx = gMeme.lines.length-1
 gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
 gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size
+gSelectedStroke = gMeme.lines[gMeme.selectedLineIdx].stroke
 }
 }
 else{
 gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
 gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size 
+gSelectedStroke = gMeme.lines[gMeme.selectedLineIdx].stroke
 }
 }

@@ -14,9 +14,10 @@ function renderMeme(){
     const txt = line.txt
     const size = line.size
     const color = line.color
+    const stroke = line.stroke
     const font = line.font
     const textAlign = line.textAlign
-    drawText(txt,size,color,font,textAlign,i)
+    drawText(txt,size,color,stroke,font,textAlign,i)
     const lineText = document.querySelector('.line-text')
     if(meme.selectedLineIdx === i)lineText.value = txt
     }
@@ -30,6 +31,10 @@ renderMeme()
 function onSetColor(color){
     setColor(color)
     renderMeme()
+}
+function onSetStroke(stroke){
+setStroke(stroke)
+renderMeme()
 }
 function downloadMeme(){
   gIsMemeDownloaded = true
@@ -88,18 +93,35 @@ function onDeleteLine(){
     renderMeme()
 }
 function resetInputs(){
-    const colorBtn = document.querySelector('.color-btn')
+    const colorInput = document.querySelector('.color-input')
     const fontBtn = document.querySelector('select')
-    colorBtn.value = '#000000'
+    colorInput.value = '#000000'
     fontBtn.selectedIndex = 0
+    const strokeInput = document.querySelector('.stroke-input')
+    strokeInput.value='#000000'
 }
 function updateInputs(){
     const meme = getMeme()
     const color = meme.lines[meme.selectedLineIdx].color
     const font = meme.lines[meme.selectedLineIdx].font
-    const colorBtn = document.querySelector('.color-btn')
+    const stroke = meme.lines[meme.selectedLineIdx].stroke
+    const colorInput = document.querySelector('.color-input')
     const fontBtn = document.querySelector('select')
-    colorBtn.value = color
+    const strokeInput = document.querySelector('.stroke-input')
+    colorInput.value = color
     fontBtn.value = font
+    strokeInput.value = stroke
+}
+function clickColorInput(colorBtn){
+    const colorInput = document.querySelector('.color-input')
+colorBtn.addEventListener('click', () => {
+    colorInput.click()
+  })
+}
+function clickStrokeInput(strokeBtn){
+     const strokeInput = document.querySelector('.stroke-input')
+strokeBtn.addEventListener('click', () => {
+    strokeInput.click()
+  })
 }
 

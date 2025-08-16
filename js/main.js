@@ -19,7 +19,7 @@ function resizeCanvas(){
     gCtx.fillStyle = "white";
 gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);  
 }
-function drawText(text,size,color,font,textAlign,i) {
+function drawText(text,size,color,stroke,font,textAlign,i) {
     var x
      if(textAlign === 'center') x = gElCanvas.width/2
      else if(textAlign === 'left') x = 5
@@ -47,7 +47,7 @@ function drawText(text,size,color,font,textAlign,i) {
       drawFrame(startX,startY,textWidth,textHeight)
     }
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = color
+    gCtx.strokeStyle = stroke
     gCtx.fillStyle = color
     gCtx.textAlign = textAlign
     gCtx.textBaseline = 'middle'

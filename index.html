@@ -74,17 +74,18 @@
         <option value="Lucida Console">Lucida Console</option>
         <option value="Segoe UI">Segoe UI</option>
         </select>
-        <button class="stroke-btn">
+        <button class="stroke-btn" onclick="clickStrokeInput(this)">
   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <text x="4" y="14" font-family="Arial, sans-serif" font-size="16" font-weight="bold">S</text>
   <line x1="2" y1="18" x2="22" y2="18"/>
 </svg>
-
+<input type="color" class="stroke-input" onchange="onSetStroke(this.value)"/>
         </button>
         
-        <label for="color-btn">
-            <input type="color" class="color-btn" name="color-btn" onchange="onSetColor(this.value)"/>
-        </label>
+        <button for="color-input" class="color-btn" onclick="clickColorInput(this)" >
+            <input type="color" class="color-input" name="color-input" onchange="onSetColor(this.value)"/>
+            <span class="icon">🎨</span>
+        </button>
         <button class="up-text-btn" onclick="onSetLocation(-5)">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="18 15 12 9 6 15"></polyline>
