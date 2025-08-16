@@ -19,13 +19,19 @@ function resizeCanvas(){
     gCtx.fillStyle = "white";
 gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height);  
 }
-function drawText(text,size,color,font,y,i) {
-    const x = gElCanvas.width/2
+function drawText(text,size,color,font,textAlign,y,i) {
+    var x
+     if(textAlign === 'center') x = gElCanvas.width/2
+     else if(textAlign === 'left') x = 5
+     else x = gElCanvas.width - 5
     gCtx.beginPath()
-     const metrics = gCtx.measureText(text);
-      const textWidth = metrics.width;
-      const textHeight = size;
-      const startX = x - textWidth/2
+     const metrics = gCtx.measureText(text)
+     const textWidth = metrics.width
+     const textHeight = size
+      var startX
+      if(textAlign === 'center') startX = x - textWidth/2
+      else if(textAlign === 'left') startX = x
+      else startX = x - textWidth
       const startY = y - metrics.actualBoundingBoxAscent
       addLocation(startX,startY,i)
       addHeightandWidth(textHeight,textWidth,i)
@@ -36,7 +42,7 @@ function drawText(text,size,color,font,y,i) {
     gCtx.strokeStyle = color
     gCtx.fillStyle = color
     gCtx.font = size+'px '+font
-    gCtx.textAlign = 'center'
+    gCtx.textAlign = textAlign
     gCtx.textBaseline = 'middle'
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)

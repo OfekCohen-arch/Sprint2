@@ -29,6 +29,7 @@ var gMeme = {
 var gSelectedColor  = 'black'
 var gSelectedSize = 40
 var gSelectedFont = 'arial'
+var gSelectedTextAlign = 'center'
 
 function getMeme(){
     return gMeme
@@ -64,6 +65,7 @@ gMeme.lines.push(
       size: gSelectedSize,
       color: gSelectedColor,
       font: gSelectedFont,
+      textAlign: gSelectedTextAlign,
       startX:'',
       startY:'',
       height:'',
@@ -113,4 +115,9 @@ function setFont(font){
 gSelectedFont = font
  if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].font = font
+}
+function setTextAlign(textAlign){
+gSelectedTextAlign = textAlign
+if(gMeme.lines.length === 0)  return
+gMeme.lines[gMeme.selectedLineIdx].textAlign = textAlign
 }

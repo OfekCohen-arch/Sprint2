@@ -16,7 +16,8 @@ function renderMeme(){
     const size = line.size
     const color = line.color
     const font = line.font
-    drawText(txt,size,color,font,y,i)
+    const textAlign = line.textAlign
+    drawText(txt,size,color,font,textAlign,y,i)
     const lineText = document.querySelector('.line-text')
     if(meme.selectedLineIdx === i)lineText.value = txt
     }
@@ -67,6 +68,10 @@ renderMeme()
 }
 function onSetFont(font){
 setFont(font)
+renderMeme()
+}
+function onSetTextAlign(textAlign){
+setTextAlign(textAlign)
 renderMeme()
 }
 
