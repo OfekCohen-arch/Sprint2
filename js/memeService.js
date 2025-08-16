@@ -42,6 +42,7 @@ function getImgById(id){
     const img = gImgs.find(img=>(id === img.id))
     return img.url
 }
+// set meme properties
 function setLineTxt(txt){
     if(gMeme.lines.length === 0) addLine()
 gMeme.lines[gMeme.selectedLineIdx].txt = txt
@@ -64,42 +65,6 @@ gSelectedSize += diff
 if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].size = gSelectedSize
 }
-
-
-function addLocation(startX,startY,idx){
-gMeme.lines[idx].startX = startX
-gMeme.lines[idx].startY = startY
-}
-function addHeightandWidth(height,width,idx){
-gMeme.lines[idx].height = height
-gMeme.lines[idx].width = width
-}
-function selectLine(x,y){
-for(let i = 0;i<gMeme.lines.length;i++){
-const startX = gMeme.lines[i].startX
-const startY = gMeme.lines[i].startY
-const endX = startX + gMeme.lines[i].width
-const endY = startY +gMeme.lines[i].height
-if(x<=endX && x>=startX && y<=endY && y>=startY){
-    switchLine()
-    return
-}
-}
-}
-function deleteAllLines(){
-    gMeme = {
- selectedImgId: 1,
- selectedLineIdx: 0,
- lines: [
- 
- ]
-}
-gSelectedColor = '#000000'
-gSelectedSize = 40
-gSelectedFont = 'Arial'
-gSelectedTextAlign = 'center'
-gSelectedStroke  = '#000000'
-}
 function setFont(font){
 gSelectedFont = font
  if(gMeme.lines.length === 0)  return
@@ -114,6 +79,30 @@ function setLocation(diff){
 if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].startY+=diff
 }
+// add properties to the line
+function addLocation(startX,startY,idx){
+gMeme.lines[idx].startX = startX
+gMeme.lines[idx].startY = startY
+}
+function addHeightandWidth(height,width,idx){
+gMeme.lines[idx].height = height
+gMeme.lines[idx].width = width
+}
+// select line
+function selectLine(x,y){
+for(let i = 0;i<gMeme.lines.length;i++){
+const startX = gMeme.lines[i].startX
+const startY = gMeme.lines[i].startY
+const endX = startX + gMeme.lines[i].width
+const endY = startY +gMeme.lines[i].height
+if(x<=endX && x>=startX && y<=endY && y>=startY){
+    switchLine()
+    return
+}
+}
+}
+
+// add switch and delete lines
 function addLine(){
 gMeme.lines.push(
     {
@@ -158,11 +147,28 @@ gMeme.selectedLineIdx = gMeme.lines.length-1
 gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
 gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size
 gSelectedStroke = gMeme.lines[gMeme.selectedLineIdx].stroke
+updateInputs()
 }
 }
 else{
 gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
 gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size 
 gSelectedStroke = gMeme.lines[gMeme.selectedLineIdx].stroke
+updateInputs()
 }
+}
+// reset meme
+function deleteAllLines(){
+    gMeme = {
+ selectedImgId: 1,
+ selectedLineIdx: 0,
+ lines: [
+ 
+ ]
+}
+gSelectedColor = '#000000'
+gSelectedSize = 40
+gSelectedFont = 'Arial'
+gSelectedTextAlign = 'center'
+gSelectedStroke  = '#000000'
 }
