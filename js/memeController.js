@@ -77,4 +77,10 @@ function onSetLocation(diff){
 setLocation(diff)
 renderMeme()
 }
+function onDeleteLine(){
+    deleteLine()
+    const lineText = document.querySelector('.line-text')
+    if(getMeme().lines.length === 0) lineText.value = ''
+    renderMeme()
+}
 

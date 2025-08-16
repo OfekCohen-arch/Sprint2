@@ -29,9 +29,9 @@ function drawText(text,size,color,font,textAlign,i) {
      const textWidth = metrics.width
      const textHeight = size
       var startX
-      if(textAlign === 'center') startX = x - textWidth/2
-      else if(textAlign === 'left') startX = x
-      else startX = x - textWidth
+      if(textAlign === 'center') startX = x - textWidth/2 -5
+      else if(textAlign === 'left') startX = x -5
+      else startX = x - textWidth -5
       var startY 
       if(!getMeme().lines[i].startY){
         if(i === 0) startY = 10

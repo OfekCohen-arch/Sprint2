@@ -125,3 +125,7 @@ function setLocation(diff){
 if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].startY+=diff
 }
+function deleteLine(){
+gMeme.lines.splice(gMeme.selectedLineIdx,1)
+gMeme.selectedLineIdx--    
+}
