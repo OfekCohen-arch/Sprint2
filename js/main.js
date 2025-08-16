@@ -25,18 +25,20 @@ function drawText(text,size,color,font,textAlign,i) {
      else if(textAlign === 'left') x = 5
      else x = gElCanvas.width - 5
     gCtx.beginPath()
-     const metrics = gCtx.measureText(text)
-     const textWidth = metrics.width
+    gCtx.font = size+'px '+font
+    const metrics = gCtx.measureText(text)
+    var textWidth
+    textWidth = metrics.width
      const textHeight = size
       var startX
-      if(textAlign === 'center') startX = x - textWidth/2 -5
-      else if(textAlign === 'left') startX = x -5
-      else startX = x - textWidth -5
+      if(textAlign === 'center') startX = x - textWidth/2
+      else if(textAlign === 'left') startX = x
+      else startX = x - textWidth
       var startY 
       if(!getMeme().lines[i].startY){
         if(i === 0) startY = 10
-        else if(i === 1) startY = gElCanvas.height - textHeight-5
-        else startY = gElCanvas.height/2-textHeight
+        else if(i === 1) startY = gElCanvas.height - textHeight
+        else startY = gElCanvas.height/2-textHeight/2
       }
       else startY = getMeme().lines[i].startY
       addLocation(startX,startY,i)
@@ -47,7 +49,6 @@ function drawText(text,size,color,font,textAlign,i) {
     gCtx.lineWidth = 2
     gCtx.strokeStyle = color
     gCtx.fillStyle = color
-    gCtx.font = size+'px '+font
     gCtx.textAlign = textAlign
     gCtx.textBaseline = 'middle'
     var y = startY + textHeight/2

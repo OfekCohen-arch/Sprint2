@@ -28,7 +28,7 @@ var gMeme = {
 }
 var gSelectedColor  = 'black'
 var gSelectedSize = 40
-var gSelectedFont = 'arial'
+var gSelectedFont = 'Arial'
 var gSelectedTextAlign = 'center'
 
 function getMeme(){
@@ -55,33 +55,11 @@ gMeme.lines[gMeme.selectedLineIdx].color = gSelectedColor
 }
 function setSize(diff){
 gSelectedSize += diff
- if(gMeme.lines.length === 0)  return
+if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].size = gSelectedSize
 }
-function addLine(){
-gMeme.lines.push(
-    {
-      txt: '',
-      size: gSelectedSize,
-      color: gSelectedColor,
-      font: gSelectedFont,
-      textAlign: gSelectedTextAlign,
-      startX:'',
-      startY:'',
-      height:'',
-      width:''  
-    }
-)
-gMeme.selectedLineIdx = gMeme.lines.length-1
-}
-function switchLine(){
-    if(gMeme.lines.length === 0) return ''
-    gMeme.selectedLineIdx++
-    if(gMeme.selectedLineIdx >= gMeme.lines.length) gMeme.selectedLineIdx = 0
-    gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
-    gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size
-    return gMeme.lines[gMeme.selectedLineIdx].txt
-}
+
+
 function addLocation(startX,startY,idx){
 gMeme.lines[idx].startX = startX
 gMeme.lines[idx].startY = startY
@@ -110,6 +88,10 @@ function deleteAllLines(){
  
  ]
 }
+gSelectedColor = 'black'
+gSelectedSize = 40
+gSelectedFont = 'Arial'
+gSelectedTextAlign = 'center'
 }
 function setFont(font){
 gSelectedFont = font
@@ -125,7 +107,50 @@ function setLocation(diff){
 if(gMeme.lines.length === 0)  return
 gMeme.lines[gMeme.selectedLineIdx].startY+=diff
 }
+function addLine(){
+gMeme.lines.push(
+    {
+      txt: '',
+      size: gSelectedSize,
+      color: gSelectedColor,
+      font: gSelectedFont,
+      textAlign: gSelectedTextAlign,
+      startX:'',
+      startY:'',
+      height:'',
+      width:''  
+    }
+)
+gMeme.selectedLineIdx = gMeme.lines.length-1
+}
+function switchLine(){
+    if(gMeme.lines.length === 0) return ''
+    gMeme.selectedLineIdx++
+    if(gMeme.selectedLineIdx >= gMeme.lines.length) gMeme.selectedLineIdx = 0
+    gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
+    gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size
+    return gMeme.lines[gMeme.selectedLineIdx].txt
+}
 function deleteLine(){
+if(gMeme.lines.length === 0) return
 gMeme.lines.splice(gMeme.selectedLineIdx,1)
-gMeme.selectedLineIdx--    
+gMeme.selectedLineIdx--
+if(gMeme.selectedLineIdx<=-1){
+if(gMeme.lines.length === 0){
+gSelectedColor = 'black'
+gSelectedSize = 40
+gSelectedFont = 'arial'
+gSelectedTextAlign = 'center'  
+resetInputs()
+}
+else{
+gMeme.selectedLineIdx = gMeme.lines.length-1
+gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
+gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size
+}
+}
+else{
+gSelectedColor = gMeme.lines[gMeme.selectedLineIdx].color
+gSelectedSize = gMeme.lines[gMeme.selectedLineIdx].size 
+}
 }

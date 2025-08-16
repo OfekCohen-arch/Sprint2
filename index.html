@@ -63,16 +63,16 @@
 </svg>
         </button>
         <select onchange="onSetFont(this.value)">
-        <option>Arial</option>
-        <option>Impact</option>
-        <option>Verdana</option>
-        <option>Tahoma</option>
-        <option>Trebuchet MS</option>
-        <option>Georgia</option>
-        <option>Times New Roman</option>
-        <option>Courier New</option>
-        <option>Lucida Console</option>
-        <option>Segoe UI</option>
+        <option value="Arial">Arial</option>
+        <option value="Impact">Impact</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Trebuchet MS">Trebuchet MS</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Lucida Console">Lucida Console</option>
+        <option value="Segoe UI">Segoe UI</option>
         </select>
         <button class="stroke-btn">
   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -82,8 +82,8 @@
 
         </button>
         
-        <label class="color-btn" for="color-btn">
-            <input type="color" name="color-btn" onchange="onSetColor(this.value)"/>
+        <label for="color-btn">
+            <input type="color" class="color-btn" name="color-btn" onchange="onSetColor(this.value)"/>
         </label>
         <button class="up-text-btn" onclick="onSetLocation(-5)">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

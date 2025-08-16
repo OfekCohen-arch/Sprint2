@@ -53,17 +53,20 @@ addLine()
 const lineText = document.querySelector('.line-text')
 lineText.value = ''
 renderMeme()
+resetInputs()
 }
 function onSwitchLine(){
     const lineText = document.querySelector('.line-text')
     lineText.value = switchLine() 
     renderMeme()
+    updateInputs()
 }
 function onSelectLine(ev){
 const x = ev.offsetX
 const y = ev.offsetY
 selectLine(x,y)
 renderMeme()
+updateInputs()
 }
 function onSetFont(font){
 setFont(font)
@@ -80,7 +83,23 @@ renderMeme()
 function onDeleteLine(){
     deleteLine()
     const lineText = document.querySelector('.line-text')
+    lineText.value = getMeme().lines[getMeme().selectedLineIdx]
     if(getMeme().lines.length === 0) lineText.value = ''
     renderMeme()
+}
+function resetInputs(){
+    const colorBtn = document.querySelector('.color-btn')
+    const fontBtn = document.querySelector('select')
+    colorBtn.value = '#000000'
+    fontBtn.selectedIndex = 0
+}
+function updateInputs(){
+    const meme = getMeme()
+    const color = meme.lines[meme.selectedLineIdx].color
+    const font = meme.lines[meme.selectedLineIdx].font
+    const colorBtn = document.querySelector('.color-btn')
+    const fontBtn = document.querySelector('select')
+    colorBtn.value = color
+    fontBtn.value = font
 }
 
