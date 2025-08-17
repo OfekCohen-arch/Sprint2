@@ -8,11 +8,13 @@ header{
     align-items: center;
     justify-content: space-between;
     font-family: poppins-medium;
+    
 }
 nav{
     font-size: 1.3rem;
     gap: 63px;
     display: flex;
+    z-index: 100;
 }
 nav button{
     color: white;
@@ -21,6 +23,7 @@ nav button{
     border: none;
     font-size: 1.3rem;
     font-family: poppins-medium;
+    width: max-content;
 }
 nav button:hover{
     color: #21AC91;
@@ -33,6 +36,7 @@ nav button:hover{
     display: flex;
     justify-self: center;
 }
-.gallery-section{
+.gallery-section,.memes-section{
     margin-top: 15px;
 }
+

@@ -11,7 +11,7 @@
 <h1>LOGO</h1>
 <nav>
 <button onclick="goToGallery()">Gallery</button>
-<button>About</button> 
+<button onclick="showMemes()">Saved Memes</button> 
 </nav>   
 <button class="menu-btn" onclick="toggleMenu()">☰</button>
 </header> 
@@ -138,14 +138,21 @@
 
 </div>
 </section> 
+<section class="memes-section">
+ <div class="memes-container">
+
+ </div> 
+</section>
 <dialog>
  <form method="dialog">
   
  </form>   
 </dialog>
+<script src="js/utils.js"></script>
+<script src="js/localStorage.js"></script>
 <script src="js/main.js"></script>
+<script src="js/memeService.js"></script>
 <script src="js/galleryController.js"></script>
 <script src="js/memeController.js"></script>
-<script src="js/memeService.js"></script>
 </body>
 </html>

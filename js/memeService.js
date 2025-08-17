@@ -20,12 +20,15 @@ var gImgs = [
     {id: 18, url: 'img/meme-imgs (square)/18.jpg', keywords:['dog']},
 ]
 var gMeme = {
+ id: '',
  selectedImgId: 1,
  selectedLineIdx: 0,
  lines: [
  
- ]
+ ],
+ data: ''
 }
+var gMemes = loadMemesFromStorage() || []
 var gSelectedColor  = '#000000'
 var gSelectedSize = 40
 var gSelectedFont = 'Arial'
@@ -34,6 +37,37 @@ var gSelectedStroke = '#000000'
 
 function getMeme(){
     return gMeme
+}
+function getMemes(){
+    return gMemes
+}
+function selectMeme(id){
+const idx = getMemeIdxById(id)
+gMeme = gMemes[idx]
+}
+function getMemeIdxById(id){
+return gMemes.findIndex(meme =>(meme.id === id))
+}
+// add and delete meme
+function addMeme(data){
+gMeme.id = getRandomId()
+gMeme.data = data
+gMemes.push(gMeme)
+saveMemesToStorage(gMemes)
+}
+function updateMeme(data){
+gMeme.data = data
+saveMemesToStorage(gMemes)
+}
+function resetMeme(){
+gMeme.id = ''
+gMeme.data =''
+deleteAllLines()
+}
+function deleteMeme(id){
+const memeIdx = getMemeIdxById(id)
+gMemes.splice(memeIdx,1)
+saveMemesToStorage(gMemes)
 }
 function getImages(){
     return gImgs

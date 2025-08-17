@@ -9,6 +9,8 @@ gCtx = gElCanvas.getContext('2d')
 resizeCanvas()
 const editor = document.querySelector('.editor-section')
 editor.style.display = 'none'
+const memesSection = document.querySelector('.memes-section')
+memesSection.style.display = 'none'
 renderGallery()
 }
 
@@ -28,4 +30,15 @@ const editor = document.querySelector('.editor-section')
 editor.style.display = 'none'
 const gallery = document.querySelector('.gallery-container')
 gallery.style.display = 'grid'
-}        
+const memesSection  = document.querySelector('.memes-section')
+memesSection.style.display = 'none'
+}   
+function showMemes(){
+const editor = document.querySelector('.editor-section')
+editor.style.display = 'none' 
+const gallery = document.querySelector('.gallery-container')
+gallery.style.display = 'none'
+const memesSection  = document.querySelector('.memes-section')
+memesSection.style.display = 'grid'
+renderMemes()
+}     

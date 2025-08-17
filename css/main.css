@@ -18,6 +18,8 @@
 @import url('components/stroke.btn.css');
 @import url('components/close-btn.css');
 @import url('components/facebook-save-btns.css');
+@import url('components/memes-container.css');
+@import url('components/remove-btn.css');
 /* setup */
 @import url('setup/typography.css');
 @import url('setup/helpers.css');

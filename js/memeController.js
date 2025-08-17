@@ -1,10 +1,36 @@
 'use strict'
+// render the saved memes
+function renderMemes(){
+const memesContainer = document.querySelector('.memes-container')
+const memes = getMemes()
+var str = ''
+if(memes.length === 0){
+  str = `<p> There are not memes yet</p>`
+}
+else{
+memes.forEach(meme => {
+ str+=`
+ <div class="card" >
+ <button class="remove-btn" onclick="onRemoveMeme('${meme.id}')">X</button>
+<img src="${meme.data}" onclick="onSelectMeme('${meme.id}')"/>
+ </div>
+ `   
+})
+}
+memesContainer.innerHTML = str  
+}
+function onSelectMeme(id){
+selectMeme(id)
+const memesSection  = document.querySelector('.memes-section')
+memesSection.style.display = 'none'
+renderMeme()
+}
 // render the meme
 function renderMeme(){
     const editor = document.querySelector('.editor-section')
     editor.style.display = 'flex'
     const meme = getMeme()
-     const imgSrc = getImgById(meme.selectedImgId)
+    const imgSrc = getImgById(meme.selectedImgId)
     const img = new Image()
     img.src = imgSrc
     img.onload = function() {
@@ -159,19 +185,41 @@ function downloadMeme(){
 // share meme
 function onShareMeme(ev){
 ev.preventDefault()
-const canvasData = gElCanvas.toDataURL('img/jpeg')
+gIsMemeDownloaded = true
+renderMeme()
+var canvasData
 function onSuccess(uploadedImgUrl){
+ canvasData = gElCanvas.toDataURL('img/jpeg')
+gIsMemeDownloaded = false
 const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
 const dialog = document.querySelector('dialog')
 dialog.showModal()
 const form = dialog.querySelector('form')
 form.innerHTML = `
-<button class="save-btn" onclick="onSaveMeme()">Save</button>  
+<button class="save-btn" onclick="onSaveMeme('${canvasData}')">Save</button>  
   <button class="facebook-btn" onclick="onShareMemeOnFacebook('${encodedUploadedImgUrl}')">Share on Facebook</button>
   <button class="close-btn">X</button>
 `
 }
 uploadImg(canvasData,onSuccess)
+}
+// share meme on Facebook
+function onShareMemeOnFacebook(encodedUploadedImgUrl){
+  gIsMemeDownloaded = true
+  renderMeme()
+  setTimeout(()=>{
+    gIsMemeDownloaded = false
+    window.open('https://www.facebook.com/sharer/sharer.php?u='+encodedUploadedImgUrl+'&t=$'+encodedUploadedImgUrl)
+  })
+}
+//save meme
+function onSaveMeme(canvasData){
+  if(!getMeme().id) addMeme(canvasData)
+    else updateMeme(canvasData)
+}
+function onRemoveMeme(id){
+deleteMeme(id)
+renderMemes()
 }
 async function uploadImg(imgData, onSuccess) {
     const CLOUD_NAME = 'webify'
@@ -212,12 +260,5 @@ function updateInputs(){
     fontBtn.value = font
     strokeInput.value = stroke
 }
-function onShareMemeOnFacebook(encodedUploadedImgUrl){
-  gIsMemeDownloaded = true
-  renderMeme()
-  setTimeout(()=>{
-    gIsMemeDownloaded = false
-    window.open('https://www.facebook.com/sharer/sharer.php?u='+encodedUploadedImgUrl+'&t=$'+encodedUploadedImgUrl)
-  })
-}
+
 
