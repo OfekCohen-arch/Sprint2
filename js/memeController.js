@@ -156,7 +156,41 @@ function downloadMeme(){
   },1500)
   
 }
+// share meme
+function onShareMeme(ev){
+ev.preventDefault()
+const canvasData = gElCanvas.toDataURL('img/jpeg')
+function onSuccess(uploadedImgUrl){
+const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+const dialog = document.querySelector('dialog')
+dialog.showModal()
+const form = dialog.querySelector('form')
+form.innerHTML = `
+<button class="save-btn" onclick="onSaveMeme()">Save</button>  
+  <button class="facebook-btn" onclick="onShareMemeOnFacebook('${encodedUploadedImgUrl}')">Share on Facebook</button>
+  <button class="close-btn">X</button>
+`
+}
+uploadImg(canvasData,onSuccess)
+}
+async function uploadImg(imgData, onSuccess) {
+    const CLOUD_NAME = 'webify'
+    const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+    const formData = new FormData()
+    formData.append('file', imgData)
+    formData.append('upload_preset', 'webify')
+    try {
+        const res = await fetch(UPLOAD_URL, {
+            method: 'POST',
+            body: formData
+        })
+        const data = await res.json()
+        onSuccess(data.secure_url)
 
+    } catch (err) {
+        console.log(err)
+    }
+}
 // update editor
 function resetInputs(){
     const colorInput = document.querySelector('.color-input')
@@ -178,5 +212,12 @@ function updateInputs(){
     fontBtn.value = font
     strokeInput.value = stroke
 }
-
+function onShareMemeOnFacebook(encodedUploadedImgUrl){
+  gIsMemeDownloaded = true
+  renderMeme()
+  setTimeout(()=>{
+    gIsMemeDownloaded = false
+    window.open('https://www.facebook.com/sharer/sharer.php?u='+encodedUploadedImgUrl+'&t=$'+encodedUploadedImgUrl)
+  })
+}
 

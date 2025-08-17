@@ -12,3 +12,15 @@ select{
     font-family: poppins-medium;
     grid-column: 1/4;
 }
+dialog{
+    position: relative;
+    overflow: visible;
+}
+dialog form{
+    height: max-content;
+    display: grid;
+    gap: 5px;
+}
+button{
+    cursor: pointer;
+}

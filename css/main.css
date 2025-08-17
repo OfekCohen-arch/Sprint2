@@ -1,13 +1,13 @@
+/*  basic  */
 @import url('basic/layout.css');
 @import url('basic/base.css');
 @import url('setup/mq.css');
-@import url('setup/typography.css');
+/*  components */
 @import url('components/canvas-container.css');
 @import url('components/editor-container.css');
 @import url('components/line-text.css');
 @import url('components/card.css');
 @import url('components/gallery-container.css');
-@import url('setup/helpers.css');
 @import url('components/menu-btn.css');
 @import url('components/download-share-container.css');
 @import url('components/download-btn.css');
@@ -16,3 +16,8 @@
 @import url('components/add-switch-delete-buttons-container.css');
 @import url('components/edit-line-container.css');
 @import url('components/stroke.btn.css');
+@import url('components/close-btn.css');
+@import url('components/facebook-save-btns.css');
+/* setup */
+@import url('setup/typography.css');
+@import url('setup/helpers.css');
