@@ -85,6 +85,9 @@ font-size: 1.3rem;
     font-size: 3rem;
     width: max-content;
   }
+  .card{
+    font-size: 14rem;
+  }
    }
    /* mobile */
 @media (max-width:740px) {
@@ -178,6 +181,9 @@ font-size: 1.3rem;
   p{
     font-size: 2rem;
     width: max-content;
+  }
+  .card{
+    font-size: 10rem;
   }
 }
 

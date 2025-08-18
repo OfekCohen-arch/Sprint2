@@ -1,5 +1,5 @@
 'use strict'
-var gImgs = [
+var gImgs = loadImgsFromStorage() || [
     {id: 1, url: 'img/meme-imgs (square)/1.jpg'},
     {id: 2, url: 'img/meme-imgs (square)/2.jpg'},
     {id: 3, url: 'img/meme-imgs (square)/3.jpg'},
@@ -96,6 +96,11 @@ function getImages(){
 function getImgById(id){
     const img = gImgs.find(img=>(id === img.id))
     return img.url
+}
+function addImg(id,url){
+var img = {id: id,url: url}
+gImgs.push(img)
+saveImgesToStorage(gImgs)
 }
 // set meme properties
 function setLineTxt(txt){

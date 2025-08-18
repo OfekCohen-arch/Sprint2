@@ -32,6 +32,7 @@ const gallery = document.querySelector('.gallery-container')
 gallery.style.display = 'grid'
 const memesSection  = document.querySelector('.memes-section')
 memesSection.style.display = 'none'
+renderGallery()
 }   
 function showMemes(){
 const editor = document.querySelector('.editor-section')
