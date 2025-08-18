@@ -88,6 +88,9 @@ function drawText(text,size,color,stroke,font,textAlign,i) {
      
 }
 function drawImg(elImg){
+  gElCanvas.height = (elImg.naturalHeight/elImg.naturalWidth)*gElCanvas.width
+  const canvasContainer = document.querySelector('.canvas-container')
+  canvasContainer.style.height = gElCanvas.height+'px'
      gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 function drawFrame(startX,startY,textWidth,textHeight){
@@ -216,6 +219,11 @@ function onShareMemeOnFacebook(encodedUploadedImgUrl){
 function onSaveMeme(canvasData){
   if(!getMeme().id) addMeme(canvasData)
     else updateMeme(canvasData)
+  const editor = document.querySelector('.editor-section')
+  editor.style.display = 'none'
+  const memesContainer = document.querySelector('.memes-section')
+  memesContainer.style.display = 'grid'
+  renderMemes()
 }
 function onRemoveMeme(id){
 deleteMeme(id)
